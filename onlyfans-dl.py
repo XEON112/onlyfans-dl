@@ -33,14 +33,14 @@ APP_TOKEN = "33d57ade8c02dbc5a333db99ff9ae26a"
 USER_INFO = {}
 
 # target profile
-PROFILE = ""
+PROFILE = "boixd27"
 # profile data from /users/<profile>
 PROFILE_INFO = {}
 PROFILE_ID = ""
 
 API_HEADER = {
     "Accept": "application/json, text/plain, */*",
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36",
     "Accept-Encoding": "gzip, deflate"
 }
 
@@ -78,7 +78,7 @@ def api_request(endpoint, getdata = None, postdata = None):
                                     headers=API_HEADER,
                                     params=getparams).json()
                     posts_num = len(list_extend)
-                    
+
                     if posts_num < 100:
                         break
 
@@ -190,7 +190,7 @@ def download_posts(cur_count, posts, is_archived):
                       "Time elapsed: %s, Estimated Time left: %s, Estimated finish time: %s" % timestats
         end = '\n' if cur_count == total_count else '\r'
         print(dwnld_stats, end=end)
-        
+
         cur_count = cur_count + 1
 
     return cur_count
@@ -274,7 +274,7 @@ if __name__ == "__main__":
         exit()
 
     total_count = postcount + archived_postcount
-        
+
     print("Found " + str(total_count) + " posts. Downloading media...")
 
     # get start time for estimation purposes
